@@ -1,0 +1,26 @@
+# /etc/conf.d/audaxd: config file for /etc/init.d/audaxd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/audax/audax.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/audaxd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/audaxd.pid"
+
+# Where to write audaxd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/audaxd"
+
+# User and group to own audaxd process
+#BITCOIND_USER="audax"
+#BITCOIND_GROUP="audax"
+
+# Path to audaxd executable
+#BITCOIND_BIN="/usr/bin/audaxd"
+
+# Nice value to run audaxd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

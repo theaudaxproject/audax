@@ -1,0 +1,11 @@
+[Protocol]
+exec=audax-qt '%u'
+protocol=audax
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

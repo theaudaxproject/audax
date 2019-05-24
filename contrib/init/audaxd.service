@@ -1,0 +1,26 @@
+[Unit]
+Description=Audax's distributed currency daemon
+After=network.target
+
+[Service]
+User=audax
+Group=audax
+
+Type=forking
+PIDFile=/var/lib/audaxd/audaxd.pid
+
+ExecStart=/usr/bin/audaxd -daemon -pid=/var/lib/audaxd/audaxd.pid \
+          -conf=/etc/audax/audax.conf -datadir=/var/lib/audaxd
+
+ExecStop=-/usr/bin/audax-cli -conf=/etc/audax/audax.conf \
+         -datadir=/var/lib/audaxd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
