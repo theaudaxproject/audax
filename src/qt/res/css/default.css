@@ -22,14 +22,11 @@ border:0px solid #fff;
 
 QMenuBar {
 background-color:#fff;
-border-top: 1px solid #9932cc;
 }
 
 QMenuBar::item {
 background-color:#fff;
 color:#333;
-border-top: 1px solid #9932cc;
-margin-right: 5px;
 }
 
 QMenuBar::item:selected {
