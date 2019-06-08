@@ -83,8 +83,8 @@ class Node :
 		self._nodeIndex = nodeIndex
 		self._nodePath = os.path.join(self._app.getRootPath(), 'node%d' % (nodeIndex))
 		self._rpcUser = 'rpcuser%d' % (nodeIndex)
-		self._audaxd = self._app.getaudaxd()
-		self._audaxCli = self._app.getaudaxCli()
+		self._audaxd = self._app.getAudaxd()
+		self._audaxCli = self._app.getAudaxCli()
 		self._daemonProcess = None
 
 	def createDataDir(self, nodeCount, masterNodePrivateKey = None) :
@@ -199,10 +199,10 @@ class Application :
 		makeDirs(self._rootPath)
 		print('Root path: %s' % (self._rootPath))
 		
-		self._audaxd = os.getenv('audaxd', None)
+		self._audaxd = os.getenv('AUDAXD', None)
 		if not self._audaxd :
-			die('Undefined audaxd')
-		self._audaxCli = os.getenv('audaxCli', None)
+			die('Undefined AUDAXD')
+		self._audaxCli = os.getenv('AUDAXCLI', None)
 		if not self._audaxCli :
 			die('Undefined AUDAX')
 		print('audaxd: %s' % (self._audaxd))
@@ -411,10 +411,10 @@ class Application :
 	def getRootPath(self) :
 		return self._rootPath
 		
-	def getaudaxd(self) :
+	def getAudaxd(self) :
 		return self._audaxd
 
-	def getaudaxCli(self) :
+	def getAudaxCli(self) :
 		return self._audaxCli
 
 if __name__ == '__main__':
