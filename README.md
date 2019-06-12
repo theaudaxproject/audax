@@ -1,7 +1,6 @@
 <img src="https://www.audaxproject.io/img/audax-splash-purplebg-910x359.png">
 
-AUDAX 2.0
-Audax Core integration/staging repository
+Audax Core - Integration/staging repository
 =====================================
 
 ### What is the AUDAX Project?  
