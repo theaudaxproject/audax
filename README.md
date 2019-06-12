@@ -4,6 +4,13 @@ AUDAX 2.0
 Audax Core integration/staging repository
 =====================================
 
+### What is the AUDAX Project?  
+The AUDAX Project is a coordinated and dedicated push towards the enablement of the mass adoption of cryptocurrency in ecommerce, in order that the potential benefits of digital payments become a reality to both merchant and buyer alike. The project's main tool in this venture is its cryptocurrency, Audax (AUDAX). 
+
+AUDAX brings fast, secure digital payment to the ecommerce industry, without negative disruption to how merchants receive their funds or how buyers access, acquire or spend cryptocurrency. This includes but of course is not limited to the establishment of a dedicated online marketplace that is focused on the acceptance cryptocurrency as payment.
+
+At the same time, AUDAX provides incentives to owners of nodes that support its network, including special incentives for owners of special nodes ("Masternodes") which play a greater role in the security, stability and functionality of the network. Additionally, holders contribute to the security of the network when they keep their wallets on and "stake" their holdings, earning more of the coin by so-doing.
+
 Audax is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
 - 100% Proof of Stake 3.0 Consensus protocol, allowing very low transaction fees and energy expenditure, and staking rewards to all participants in the network
 - Masternode technology used to secure the network and provide the above features, each Masternode is secured
