@@ -13,17 +13,18 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 ### AUDAX Specifications
 
 
-|                           |                            |               |
-| Consensus Protocol        | 100% Proof of Stake 3.0    | Informational |
-| Block Time                | 60 seconds                 | Standard      |
-| Difficulty Retargeting    | Every Block                | Standard      |
-| Maturity                  | 50 Blocks                  | Standard      |
-| Minimum Staking Age       | 3 Hours                    | Standard      |
-| Max Supply                | 200 Million                | Informational |
-| Block Reward              | 8 Coins                    | Standard      |
-| PoS reward                | 8 Coins                    | Standard      |
-| Governance                | 4 Coins                    | Standard      |
-| Masternode Collateral     | 150,000 Coins              | Standard      |
-| Hash Type                 | SHA256                     | Standard      |
+|                           |                            |
+|---------------------------|----------------------------|
+| Consensus Protocol        | 100% Proof of Stake 3.0    |
+| Block Time                | 60 seconds                 |
+| Difficulty Retargeting    | Every Block                |
+| Maturity                  | 50 Blocks                  |
+| Minimum Staking Age       | 3 Hours                    |
+| Max Supply                | 200 Million                |
+| Block Reward              | 8 Coins                    |
+| PoS reward                | 8 Coins                    |
+| Governance                | 4 Coins                    |
+| Masternode Collateral     | 150,000 Coins              |
+| Hash Type                 | SHA256                     |
 
 
