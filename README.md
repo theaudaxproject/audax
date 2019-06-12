@@ -12,33 +12,17 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 
 ### AUDAX Specifications
 
-|---------------------------------------|--------------------------|
-| Consensus Protocol                    | 100% Proof of Stake 3.0  | 
-| Block time | 60 seconds               | Standard      | Draft    |
-| Difficulty Retargeting | Every block  | Informational | Accepted |
-| Maturity | Universal 50 blocks        | Standard      | Draft    |
-| Minimum Staking Age | 3 hours         | Informational | Accepted |
-| Max Supply | 200 million              |Standard      | Draft     |
-| Block Reward | 20 coins               | Informational | Accepted |
-| PoS Reward | 8 coins  per block       | Standard      | Draft    |
-| Governance | 4 coins per block        | Informational | Accepted |
-| Masternode Collateral | 150,000 coins | Standard      | Draft    |
-| Hash Type | Universal SHA256          | Standard      | Draft    |
-
-
-
-| Number                    | Title                      | Type          | Status   |
-|---------------------------|----------------------------|---------------|----------|
-| Consensus Protocol        | 100% Proof of Stake 3.0    | Informational | Accepted |
-| Block Time                | 60 seconds                 | Standard      | Draft    |
-| Difficulty Retargeting    | Every Block                | Standard      | Draft    |
-| Maturity                  | 50 Blocks                  | Standard      | Draft    |
-| Minimum Staking Age       | 3 Hours                    | Standard      | Draft    |
-| Max Supply                | 200 Million                | Informational | Draft    |
-| Block Reward              | 8 Coins                    | Standard      | Draft    |
-| PoS reward                | 8 Coins                    | Standard      | Draft    |
-| Governance                | 4 Coins                    | Standard      | Draft    |
-| Masternode Collateral     | 150,000 Coins              | Standard      | Draft    |
-| Hash Type                 | SHA256                     | Standard      | Draft    |
+|---------------------------|----------------------------|---------------|
+| Consensus Protocol        | 100% Proof of Stake 3.0    | Informational |
+| Block Time                | 60 seconds                 | Standard      |
+| Difficulty Retargeting    | Every Block                | Standard      |
+| Maturity                  | 50 Blocks                  | Standard      |
+| Minimum Staking Age       | 3 Hours                    | Standard      |
+| Max Supply                | 200 Million                | Informational |
+| Block Reward              | 8 Coins                    | Standard      |
+| PoS reward                | 8 Coins                    | Standard      |
+| Governance                | 4 Coins                    | Standard      |
+| Masternode Collateral     | 150,000 Coins              | Standard      |
+| Hash Type                 | SHA256                     | Standard      |
 
 
