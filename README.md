@@ -12,8 +12,8 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 
 ### AUDAX Specifications
 
+
 |                           |                            |               |
-|---------------------------|----------------------------|---------------|
 | Consensus Protocol        | 100% Proof of Stake 3.0    | Informational |
 | Block Time                | 60 seconds                 | Standard      |
 | Difficulty Retargeting    | Every Block                | Standard      |
