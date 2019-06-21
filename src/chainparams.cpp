@@ -188,8 +188,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "04615040cee8445d8cdd48e41b72e487e3a1c0065c4727c1700a27a74e16285997b33a6f2b0ee9343442409d67e78f78f48bf925b3b4e21d4a7cf9776787337d3c";
-        strSporkKeyTemp = "04ecf30a20336ec7ff165159a91b16468d92a74571b7e80400f1a661fdeec7322c2de30523360eb55f08f1a6709d20aa5815b802a8b48224318d6de6e2b7ce1a1d";
+        strSporkKey = "049b91c601a0cf8295fa665f5aa1ff4971b8fd0564c09102d7473a8251bfd1260cdd1ae14d535ecd76634afec9ad024f6f47a91e45924db9e5ce0330efcc40df45";
+        strSporkKeyTemp = "046cc6f95590f050a08192e65f766c8fa7ff62dcfe42a3c3a7886bb8c5dd40d31ffc5057353365b9d44499ca981b7ccff7f53b40071de68d56d410347c62629d9c";
         strObfuscationPoolDummyAddress = "ALB4kES5ASrErPd7SKcTyw9nJ3xYkoXRAx";
         nBudgetFeeConfirmations = 6; // Number of confirmations for the finalization fee
     }
