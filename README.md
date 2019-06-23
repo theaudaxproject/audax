@@ -35,4 +35,12 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 | Masternode Collateral     | 150,000 Coins              |
 | Hash Type                 | SHA256                     |
 
+## Official Links
+* [Website](https://www.audaxproject.io/)
+* [Explorer]Coming soon
 
+## Social
+* [Discord](https://discord.gg/2Dz3mjm)
+* [Twitter](https://twitter.com/audaxcoin)
+* [Telegram](https://t.me/audaxcoin)
+* [BitCoinTalk](https://bitcointalk.org/index.php?topic=5149788)
