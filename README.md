@@ -44,3 +44,6 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 * [Twitter](https://twitter.com/audaxcoin)
 * [Telegram](https://t.me/audaxcoin)
 * [BitCoinTalk](https://bitcointalk.org/index.php?topic=5149788)
+
+## License
+Audax Core is released under the terms of the MIT license.
