@@ -37,7 +37,7 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 
 ## Official Links
 * [Website](https://www.audaxproject.io/)
-* [Explorer]Coming soon
+* [Explorer - Coming Soon]
 
 ## Social
 * [Discord](https://discord.gg/2Dz3mjm)
