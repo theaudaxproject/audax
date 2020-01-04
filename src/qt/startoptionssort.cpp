@@ -61,6 +61,9 @@ void CustomRectItem::dropEvent(QGraphicsSceneDragDropEvent *event){
 StartOptionsSort::StartOptionsSort(std::vector<std::string> Words, int rows, QWidget *parent)
         : QWidget(parent), ui(new Ui::StartOptionsSort) {
     ui->setupUi(this);
+    ui->dragdropLabel->setText(
+        tr("Please <b>drag</b> and <b>drop</b> your seed words into the "
+           "correct order to confirm your recovery phrase. "));
 
     scene = new QGraphicsScene(this);
     if(rows == 4) {

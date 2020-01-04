@@ -29,6 +29,9 @@ StartOptionsRestore::StartOptionsRestore(QStringList _wordList, int rows, QWidge
             label->setContentsMargins(8,12,8,12);
             label->setAlignment(Qt::AlignCenter);
             editList.push_back(label);
+            ui->restoreLabel->setText(
+                tr("Restore your wallet using a recovery seed phrase below. "
+                   ""));
             connect(label, SIGNAL(textChanged(const QString &)), this, SLOT(textChanged(const QString &)));
             ui->gridLayoutRevealed->addWidget(label, i, k, Qt::AlignCenter);
         }
