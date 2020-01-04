@@ -106,12 +106,12 @@ StartOptionsSort::StartOptionsSort(std::vector<std::string> Words, int rows, QWi
             CustomRectItem *listViewBorder = new CustomRectItem;
             scene->addItem(listViewBorder);
             listViewBorder->setRect(rect2);
-            listViewBorder->setBrush(QColor(35,136,237));
+            listViewBorder->setBrush(QColor(255,144,0));
             listViewBorder->setPos(ki,ii + 50);
             listViewBorder->setPen(Qt::NoPen);
 
             listView->setPos(ki,ii);
-            QPen myPen(QColor(255,255,255), 2, Qt::MPenStyle);
+            QPen myPen(QColor(0,0,0), 2, Qt::MPenStyle);
             listView->setPen(myPen);
 
             graphicsList.push_back(listView);
