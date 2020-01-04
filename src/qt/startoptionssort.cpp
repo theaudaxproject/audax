@@ -66,6 +66,7 @@ StartOptionsSort::StartOptionsSort(std::vector<std::string> Words, int rows, QWi
            "correct order to confirm your recovery phrase. "));
 
     scene = new QGraphicsScene(this);
+    //scene->setBackgroundBrush(QColor(255,255,255));
     if(rows == 4) {
         scene->setSceneRect(0,0,620,229);
         view = new QGraphicsView;

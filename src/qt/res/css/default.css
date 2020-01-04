@@ -1560,18 +1560,18 @@ color:#818181;
 
 /*Seed Words Generator*/
 QListView {
-	background-color: #132232;
-	border: 2px solid #132232;
+	background-color: #f7f7f7;
+	border: 2px solid #f7f7f7;
 }
 
 QListView::item {
-	color: white;
+	color: black;
 	height: 36px;
 }
 
 QGraphicsView {
-	background-color: #132232;
-	border: 2px solid #132232;
+	background-color: #f7f7f7;
+	border: 2px solid #f7f7f7;
 }
 
 QRadioButton {
@@ -1582,7 +1582,7 @@ QRadioButton {
 	border-radius: 8px;
 }
 QRadioButton:focus {
-	background-color: #000;
+	background-color: #f7f7f7;
 }
 QRadioButton::indicator {
 	display: none;
@@ -1592,7 +1592,7 @@ QRadioButton::indicator {
 }
 QRadioButton:checked {
 	background-color: transparent;
-	border: 2px solid #2388ed;
+	border: 2px solid #FF9000;
 }
 QRadioButton:unchecked {
 	background-color: transparent;
@@ -1604,22 +1604,22 @@ QRadioButton::unchecked: hover {
 }
 
 QListWidget {
-	border-color: #132232;
+	border-color: #f7f7f7;
 }
 QListWidget::item {
 	border-radius: 8px;
 	border: none;
-	color: #fff;
+	color: #000;
 }
 QListWidget::item:selected {
-	border: 2px solid #2388ed;
+	border: 2px solid #FF9000;
 	border-radius: 8px;
 	padding-left: 4px;
 	background: transparent;
 }
 QListWidget::item:focus {
-	border: 1px solid #1f1f1f;
-	background:  #1f1f1f; ;
+	border: 1px solid #f7f7f7;
+	background:  #f7f7f7; ;
 	border-radius: 8px;
 	padding-left: 4px;
 }
