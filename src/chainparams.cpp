@@ -279,7 +279,8 @@ public:
 	
         // Testnet --- nonce: 1862643 time: 1561002031 hash: 0x000007cb1c770414ded1b718165ad2484ebf905e343041ad03b7bc2022b6370d merklehash: 0xd5fa99ffeaf4a70e925a373485500de47eedff40dba142546ecf17826b7ebdb4
 
-        vSeeds.push_back(CDNSSeedData("1", "dns1.cryptotron.xyz"));
+        vFixedSeeds.clear();
+        vSeeds.clear();
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 58); // Testnet audax addresses start with 'Q'
