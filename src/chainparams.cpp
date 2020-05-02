@@ -174,7 +174,7 @@ public:
 		
         // Mainnet --- nonce: 5407709 time: 1561003031 hash: 0x00000f62ca37e03539929b0fe54c61b46bb831b99e97df99194aae2fba346f45 merklehash: 0xd5fa99ffeaf4a70e925a373485500de47eedff40dba142546ecf17826b7ebdb4
 
-        vSeeds.push_back(CDNSSeedData("0", "dns0.audaxproject.io"));
+        vSeeds.push_back(CDNSSeedData("0", "dns1.cryptotron.xyz"));
         
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 23); // AUDAX addresses start with 'A'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 8); // AUDAX script addresses start with '8'
