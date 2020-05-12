@@ -1,7 +1,7 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef MONETARYUNIT_HDCHAIN_H
-#define MONETARYUNIT_HDCHAIN_H
+#ifndef AUDAX_HDCHAIN_H
+#define AUDAX_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -150,4 +150,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // MONETARYUNIT_HDCHAIN_H
+#endif // AUDAX_HDCHAIN_H

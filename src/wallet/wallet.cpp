@@ -3089,14 +3089,17 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 
     if (GetTime() - nLastStakeSetUpdate > nStakeSetUpdateTime) {
         setStakeCoins.clear();
-        if (!SelectStakeCoins(setStakeCoins, nBalance - nReserveBalance))
+        if (!SelectStakeCoins(setStakeCoins, nBalance - nReserveBalance)) {
+            LogPrint("staking", "CreateCoinStake(): selectStakeCoins failed\n");
             return false;
-
+        }
         nLastStakeSetUpdate = GetTime();
     }
 
-    if (setStakeCoins.empty())
+    if (setStakeCoins.empty()) {
+        LogPrint("staking", "CreateCoinStake(): listInputs empty\n");
         return false;
+    }
 
     vector<const CWalletTx*> vwtxPrev;
 

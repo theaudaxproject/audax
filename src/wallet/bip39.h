@@ -21,8 +21,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#ifndef MONETARYUNIT_BIP39_H
-#define MONETARYUNIT_BIP39_H
+#ifndef AUDAX_BIP39_H
+#define AUDAX_BIP39_H
 
 #include "allocators.h"
 
