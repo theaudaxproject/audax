@@ -161,9 +161,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             nLastCoinStakeSearchTime = nSearchTime;
         }
 
-        if (!fStakeFound)
+        if (!fStakeFound) {
             LogPrint("staking", "CreateNewBlock(): stake not found\n");
             return NULL;
+        }
     }
 
     // Block resource limits
