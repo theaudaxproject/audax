@@ -26,7 +26,7 @@ StartOptionsMain::StartOptionsMain(QWidget *parent)
     ui->setupUi(this);
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
-    this->setWindowTitle("MonetaryUnit Wallet Setup");
+    this->setWindowTitle("Audax Wallet Setup");
 
 
     wordsList = CMnemonic::getListOfAllWordInLanguage();
