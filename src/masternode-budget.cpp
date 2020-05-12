@@ -168,7 +168,7 @@ void CBudgetManager::SubmitFinalBudget()
     // Submit final budget during the last 2 days (4,320 blocks) before payment for Mainnet, about 9 minutes (9 blocks) for Testnet
     int finalizationWindow = ((GetBudgetPaymentCycleBlocks() / 30) * 2);
 
-    if (Params().NetworkID() == CBaseChainParams::TESTNET || Params().NetworkID() == CBaseChainParams::REGTEST)) {
+    if (Params().NetworkID() == CBaseChainParams::TESTNET || Params().NetworkID() == CBaseChainParams::REGTEST) {
         // NOTE: 9 blocks for testnet is way to short to have any masternode submit an automatic vote on the finalized(!) budget,
         //       because those votes are only submitted/relayed once every 56 blocks in CFinalizedBudget::AutoCheck()
 
