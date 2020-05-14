@@ -561,7 +561,7 @@ std::string LicenseInfo()
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2015-%i The PIVX Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
-		   FormatParagraph(strprintf(_("Copyright (C) 2017-%i The Audax Core Developers"), COPYRIGHT_YEAR)) + "\n" +
+		   FormatParagraph(strprintf(_("Copyright (C) 2017-%i The MonetaryUnit Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
            FormatParagraph(strprintf(_("Copyright (C) 2018-%i The Audax Core Developers"), COPYRIGHT_YEAR)) + "\n" +
            "\n" +
