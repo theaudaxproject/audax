@@ -107,7 +107,7 @@ StartOptionsSort::StartOptionsSort(std::vector<std::string> Words, int rows, QWi
             CustomRectItem *listViewBorder = new CustomRectItem;
             scene->addItem(listViewBorder);
             listViewBorder->setRect(rect2);
-            listViewBorder->setBrush(QColor(255,144,0));
+            listViewBorder->setBrush(QColor(153,50,204));
             listViewBorder->setPos(ki,ii + 50);
             listViewBorder->setPen(Qt::NoPen);
 
