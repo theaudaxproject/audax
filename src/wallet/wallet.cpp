@@ -848,6 +848,7 @@ void CWallet::GenerateNewHDChain(const std::vector<std::string>& words)
                 std::string notice = "This is your seed phrase, please write it down to recover wallet \n\"" + join(vectorWords," ")+"\"\n" +
                                      "NEVER SHARE THIS SEQUENCE WITH ANYONE TO PROTECT YOUR FUNDS";
                 ShowSeedPhrase(notice);
+                return;
             }
         }
 
