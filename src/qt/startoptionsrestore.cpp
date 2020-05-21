@@ -11,7 +11,7 @@
 
 
 
-QString editLineCorrectCss = "QLineEdit{border-bottom:1px solid #FF9000;}";
+QString editLineCorrectCss = "QLineEdit{border-bottom:1px solid #9932CC;}";
 QString editLineInvalidCss = "QLineEdit{border-bottom:1px solid red;}";
 
 StartOptionsRestore::StartOptionsRestore(QStringList _wordList, int rows, QWidget *parent)

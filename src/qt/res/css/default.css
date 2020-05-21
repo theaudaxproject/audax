@@ -1592,7 +1592,7 @@ QRadioButton::indicator {
 }
 QRadioButton:checked {
 	background-color: transparent;
-	border: 2px solid #FF9000;
+	border: 2px solid #9932CC;
 }
 QRadioButton:unchecked {
 	background-color: transparent;
@@ -1612,7 +1612,7 @@ QListWidget::item {
 	color: #000;
 }
 QListWidget::item:selected {
-	border: 2px solid #FF9000;
+	border: 2px solid #9932CC;
 	border-radius: 8px;
 	padding-left: 4px;
 	background: transparent;
