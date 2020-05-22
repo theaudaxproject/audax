@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2019-2020 The Audax developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -463,6 +464,10 @@ bool CMasternodeBroadcast::Create(CTxIn txin, CService service, CKey keyCollater
 
 bool CMasternodeBroadcast::CheckDefaultPort(std::string strService, std::string& strErrorRet, std::string strContext)
 {
+    if(Params().NetworkID() == CBaseChainParams::REGTEST) {
+        return true;
+    }
+
     CService service = CService(strService);
     int nDefaultPort = Params().GetDefaultPort();
 

@@ -65,7 +65,10 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     ( 150000, uint256("1605fddb51984b3db5f3ab5bb0fa9a08b96a54eb654c32e0c325c12382d67eb8"))
     ( 175000, uint256("87ea07cb6db78cbd57b58e9005c06ff3590d1717b18ebe76234e3a48bc94d331"))
     ( 200000, uint256("d48c43dc84253e2edaf0d93fb2b9c6292626f20f10e348406dfc96dd7890a252"))
-    ( 300000, uint256("76f6e5f92ec0a8b4716156a8192d8d37c0c6bf2ae47fb9ae98eb15b83f83dc87"));
+    ( 300000, uint256("76f6e5f92ec0a8b4716156a8192d8d37c0c6bf2ae47fb9ae98eb15b83f83dc87"))
+    ( 350000, uint256("397b92a1551208c632afef5c20da983da3665e21c19af22ecdd7d7109961c5ac"))
+    ( 400000, uint256("933d3dcd62741932de67b2cf419ff239d5c73975a66d559a9968d56f820aad88"))
+    ( 450000, uint256("44f503a7f80832f775825bea5d606aef134397679e97e1c1fdca416c36c0dd47"));
     
 
 static const Checkpoints::CCheckpointData data = {
@@ -182,7 +185,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
         // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x01)(0x49).convert_to_container<std::vector<unsigned char> >();
+        nExtCoinType = 329;
 
         bech32_hrp = "bo";
 
@@ -290,7 +293,7 @@ public:
         // Testnet audax BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
         // Testnet audax BIP44 coin type is '1' (All coin's testnet default)
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x01)(0x00)(0x00)(0x80).convert_to_container<std::vector<unsigned char> >();
+        nExtCoinType = 1;
 
         bech32_hrp = "tb";
 
@@ -415,6 +418,7 @@ public:
         vFixedSeeds.clear(); //! Unit test mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Unit test mode doesn't have any DNS seeds.
 
+        nExtCoinType = 1;
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;
         fAllowMinDifficultyBlocks = false;

@@ -23,7 +23,7 @@
 #include "util.h"
 #include "utilmoneystr.h"
 #ifdef ENABLE_WALLET
-#include "wallet.h"
+#include "wallet/wallet.h"
 #endif
 #include "validationinterface.h"
 #include "masternode-payments.h"
@@ -161,8 +161,10 @@ CBlockTemplate* CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, 
             nLastCoinStakeSearchTime = nSearchTime;
         }
 
-        if (!fStakeFound)
-            return nullptr;
+        if (!fStakeFound) {
+            LogPrint("staking", "CreateNewBlock(): stake not found\n");
+            return NULL;
+        }
     }
 
     // Block resource limits
@@ -473,7 +475,7 @@ int64_t nHPSTimerStart = 0;
 CBlockTemplate* CreateNewBlockWithKey(CReserveKey& reservekey, CWallet* pwallet, bool fProofOfStake)
 {
     CPubKey pubkey;
-    if (!reservekey.GetReservedKey(pubkey))
+    if (!reservekey.GetReservedKey(pubkey, false))
         return NULL;
 
     CScript scriptPubKey = CScript() << ToByteVector(pubkey) << OP_CHECKSIG;
@@ -715,6 +717,24 @@ void GenerateBitcoins(bool fGenerate, CWallet* pwallet, int nThreads)
     minerThreads = new boost::thread_group();
     for (int i = 0; i < nThreads; i++)
         minerThreads->create_thread(boost::bind(&ThreadBitcoinMiner, pwallet));
+}
+
+// ppcoin: stake minter thread
+void ThreadStakeMinter()
+{
+    boost::this_thread::interruption_point();
+    LogPrintf("ThreadStakeMinter started\n");
+    CWallet* pwallet = pwalletMain;
+    try {
+        BitcoinMiner(pwallet, true);
+        boost::this_thread::interruption_point();
+    } catch (std::exception& e) {
+        LogPrintf("ThreadStakeMinter() exception \n");
+        ThreadStakeMinter();
+    } catch (...) {
+        LogPrintf("ThreadStakeMinter() error \n");
+    }
+    LogPrintf("ThreadStakeMinter exiting,\n");
 }
 
 #endif // ENABLE_WALLET

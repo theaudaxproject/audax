@@ -125,7 +125,7 @@ private:
     mutable QSize cachedMinimumSizeHint;
 
     /**
-     * Parse a string into a number of base monetary units and
+     * Parse a string into a number of base audax units and
      * return validity.
      * @note Must return 0 if !valid.
      */

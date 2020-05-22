@@ -36,6 +36,9 @@
 #include "util.h"
 #include "utilmoneystr.h"
 #include "validationinterface.h"
+#ifdef ENABLE_WALLET
+#include "wallet/wallet.h"
+#endif
 
 #include <sstream>
 
@@ -2042,7 +2045,7 @@ bool RecalculateAUDAXSupply(int nHeightStart)
 
         CAmount nValueIn = 0;
         CAmount nValueOut = 0;
-        for (const CTransaction tx : block.vtx) {
+        for (const CTransaction& tx : block.vtx) {
             for (unsigned int i = 0; i < tx.vin.size(); i++) {
                 if (tx.IsCoinBase())
                     break;
@@ -2293,9 +2296,9 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     if (fAddrIndex)
         if (!pblocktree->AddAddrIndex(vPosAddrid))
             return state.Error("Failed to write address index");
-    
-        // add new entries
-    for (const CTransaction tx: block.vtx) {
+
+    // add new entries
+    for (const CTransaction& tx: block.vtx) {
         if (tx.IsCoinBase())
             continue;
         for (const CTxIn in: tx.vin) {
@@ -3480,7 +3483,7 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
     //   {0xaa, 0x21, 0xa9, 0xed}, and the following 32 bytes are SHA256(witness root, witness nonce). In case there are
     //   multiple, the last one is used.
     bool fHaveWitness = false;
-    if (GetSporkValue(SPORK_17_SEGWIT_ACTIVATION) < pindexPrev->nTime) {
+    if (pindexPrev != nullptr && GetSporkValue(SPORK_17_SEGWIT_ACTIVATION) < pindexPrev->nTime) {
         int commitpos = GetWitnessCommitmentIndex(block);
         if (commitpos != -1) {
             if (!IsSporkActive(SPORK_19_SEGWIT_ON_COINBASE)) {
@@ -3818,7 +3821,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
         return error("%s : ActivateBestChain failed", __func__);
 
     if (!fLiteMode) {
-        if (masternodeSync.RequestedMasternodeAssets > MASTERNODE_SYNC_LIST) {
+        if (masternodeSync.RequestedMasternodeAssets > MASTERNODE_SYNC_LIST || Params().NetworkID() == CBaseChainParams::REGTEST) {
             obfuScationPool.NewBlock();
             masternodePayments.ProcessBlock(GetHeight() + 10);
             budget.NewBlock();
@@ -3844,7 +3847,7 @@ bool ProcessNewBlock(CValidationState& state, CNode* pfrom, CBlock* pblock, CDis
 bool TestBlockValidity(CValidationState& state, const CBlock& block, CBlockIndex* const pindexPrev, bool fCheckPOW, bool fCheckMerkleRoot)
 {
     AssertLockHeld(cs_main);
-    assert(pindexPrev == chainActive.Tip());
+    assert(pindexPrev && pindexPrev == chainActive.Tip());
 
     CCoinsViewCache viewNew(pcoinsTip);
     CBlockIndex indexDummy(block);
@@ -3961,7 +3964,7 @@ bool static LoadBlockIndexDB(string& strError)
     // Calculate nChainWork
     vector<pair<int, CBlockIndex*> > vSortedByHeight;
     vSortedByHeight.reserve(mapBlockIndex.size());
-    for (const PAIRTYPE(uint256, CBlockIndex*) & item : mapBlockIndex) {
+    for (const std::pair<const uint256, CBlockIndex*>& item : mapBlockIndex) {
         CBlockIndex* pindex = item.second;
         vSortedByHeight.push_back(make_pair(pindex->nHeight, pindex));
     }
@@ -4011,7 +4014,7 @@ bool static LoadBlockIndexDB(string& strError)
     // Check presence of blk files
     LogPrintf("Checking all blk files are present...\n");
     set<int> setBlkDataFiles;
-    for (const PAIRTYPE(uint256, CBlockIndex*) & item : mapBlockIndex) {
+    for (const std::pair<const uint256, CBlockIndex*>& item : mapBlockIndex) {
         CBlockIndex* pindex = item.second;
         if (pindex->nStatus & BLOCK_HAVE_DATA) {
             setBlkDataFiles.insert(pindex->nFile);
