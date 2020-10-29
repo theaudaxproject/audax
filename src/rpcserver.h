@@ -201,6 +201,7 @@ extern UniValue bip38decrypt(const UniValue& params, bool fHelp);
 
 extern UniValue getgenerate(const UniValue& params, bool fHelp); // in rpcmining.cpp
 extern UniValue setgenerate(const UniValue& params, bool fHelp);
+extern UniValue generate(const JSONRPCRequest& request);
 extern UniValue getnetworkhashps(const UniValue& params, bool fHelp);
 extern UniValue gethashespersec(const UniValue& params, bool fHelp);
 extern UniValue getmininginfo(const UniValue& params, bool fHelp);
