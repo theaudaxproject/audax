@@ -18,7 +18,7 @@ Audax is a cutting edge cryptocurrency, with many features not available in most
 
 *** BETA SOFTWARE - USE AT YOUR OWN RISK ***
 
-### AUDAX Specifications:
+### AUDAX Specifications
 
 
 |                           |                            |
