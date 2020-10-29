@@ -1,5 +1,5 @@
 ---
-name: "audax-aarch64-1.0.1"
+name: "audax-aarch64-1.0.2"
 enable_cache: true
 suites:
 - "xenial"
