@@ -5196,6 +5196,35 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         ProcessGetData(pfrom);
     }
 
+    else if (strCommand == "getheaders"){
+        CBlockLocator locator;
+        uint256 hashStop;
+        vRecv >> locator >> hashStop;
+        LOCK(cs_main);
+        if (IsInitialBlockDownload())
+            return true;
+        CBlockIndex* pindex = NULL;
+        if (locator.IsNull()){
+            BlockMap::iterator mi = mapBlockIndex.find(hashStop);
+            if (mi == mapBlockIndex.end())
+                return true;
+            pindex = (*mi).second;
+        }else{
+            pindex = FindForkInGlobalIndex(chainActive, locator);
+            if (pindex)
+                pindex = chainActive.Next(pindex);
+        }
+        vector<CBlock> vHeaders;
+        int nLimit = MAX_HEADERS_RESULTS;
+        LogPrint("net", "getheaders %d to %s from peer=%d\n", (pindex ? pindex->nHeight : -1), hashStop.ToString(), pfrom->id);
+        for (; pindex; pindex = chainActive.Next(pindex)){
+            vHeaders.push_back(pindex->GetBlockHeader());
+            if (--nLimit <= 0 || pindex->GetBlockHash() == hashStop)
+                break;
+        }
+        pfrom->PushMessage("headers", vHeaders);
+    }
+
 
     else if (strCommand == NetMsgType::GETBLOCKS || strCommand == NetMsgType::GETHEADERS) {
         CBlockLocator locator;
